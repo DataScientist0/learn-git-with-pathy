@@ -1,0 +1,65 @@
+WHAT I LEARNED — GIT & GITHUB BASICS
+=====================================
+
+1. COMMAND LINE BASICS
+-----------------------
+Opening it:
+  - Mac: Cmd+Space -> type "Terminal" -> Enter
+  - Windows: Win+R -> type "cmd" -> Enter
+
+Navigation commands:
+  pwd / chdir   -> shows the current folder you're in (Mac / Windows)
+  ls / dir      -> lists files and folders in the current location
+  cd foldername -> moves into a folder
+  cd ..         -> moves back up one folder
+
+Creating things:
+  mkdir name    -> creates a new folder
+  touch name.txt (Mac) / echo. > name.txt (Windows) -> creates an empty file
+
+Copying, moving, renaming:
+  cp old new (Mac) / copy old new (Windows)  -> copies a file
+  mv old new (Mac) / move old new (Windows)  -> moves OR renames a file
+
+Deleting:
+  rm file (Mac) / del file (Windows)         -> deletes a file permanently
+  rm -r folder (Mac) / rmdir /s folder (Windows) -> deletes a folder and everything inside it
+  Note: command-line deletion is permanent — it does NOT go to the Trash/Recycle Bin.
+
+Tip: You don't need to memorize these commands. Professional developers look
+them up too — just search "what's the command to do X" whenever needed.
+
+2. GIT BASICS (tracking changes locally)
+------------------------------------------
+  git init            -> turns the current folder into a Git project (starts tracking it)
+  git status           -> shows which files have changed / are staged
+  git add filename      -> stages one specific file
+  git add .            -> stages ALL changed files at once
+  git commit -m "message" -> saves a snapshot of the staged changes, with a note describing them
+
+Key ideas:
+  - Each commit is a checkpoint in the project's history you can go back to.
+  - Commit messages should be clear and describe what changed.
+  - git log shows the full history of commits.
+
+3. CONNECTING TO GITHUB (pushing online)
+--------------------------------------------
+  git remote add origin <repo-url>  -> links the local project to a GitHub repository
+  git branch -M main                -> names the main branch "main"
+  git push -u origin main           -> uploads the project to GitHub for the first time
+
+Key ideas:
+  - A "repository" (repo) = the project's storage location on GitHub, plus its full history.
+  - The first git push will prompt a GitHub sign-in.
+
+4. UPDATING THE PROJECT LATER (ongoing workflow)
+----------------------------------------------------
+After the first push, every time I make new changes and want to update GitHub,
+the commands I need are:
+
+  git add .
+  git commit -m "describe what changed"
+  git push
+
+(git init, git remote add, and git branch -M main are ONE-TIME setup steps —
+I don't repeat them for every update, only add/commit/push.)
